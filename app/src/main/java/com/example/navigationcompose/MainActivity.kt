@@ -16,6 +16,7 @@ import com.example.navigationcompose.navigation.SetupNavGraph
 import com.example.navigationcompose.ui.theme.NavigationComposeTheme
 
 class MainActivity : ComponentActivity() {
+
     lateinit var navController: NavHostController
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,13 +29,5 @@ class MainActivity : ComponentActivity() {
 
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    NavigationComposeTheme {
-
     }
 }

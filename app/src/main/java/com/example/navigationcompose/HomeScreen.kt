@@ -24,7 +24,9 @@ fun HomeScreen(
             color = MaterialTheme.colors.primary,
             style = MaterialTheme.typography.h3,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.clickable { navController.navigate(route = Screen.Detail.route) }
+            modifier = Modifier.clickable {
+                navController.navigate(route = Screen.Detail.passIdAndName(11, "Henrique"))
+            }
         )
     }
 }
