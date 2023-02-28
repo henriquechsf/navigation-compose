@@ -3,51 +3,39 @@ package com.example.navigationcompose
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import com.example.navigationcompose.navigation.AUTHENTICATION_ROUTE
 import com.example.navigationcompose.navigation.Screen
 
 @Composable
-fun HomeScreen(
+fun SignUpScreen(
     navController: NavController
 ) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Text(
-            text = "Home",
-            color = MaterialTheme.colors.primary,
+            text = "SignUp",
+            color = Color.Green,
             style = MaterialTheme.typography.h3,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.clickable {
-                navController.navigate(route = Screen.Detail.passIdAndName(11, "Henrique"))
+                navController.popBackStack()
             }
-        )
-        Text(
-            text = "Login/SignUp",
-            style = MaterialTheme.typography.h6,
-            fontWeight = FontWeight.Medium,
-            modifier = Modifier
-                .padding(top = 150.dp)
-                .clickable {
-                    navController.navigate(AUTHENTICATION_ROUTE)
-                }
         )
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun HomeScreenPreview() {
-    HomeScreen(
+fun SignUpScreenPreview() {
+    SignUpScreen(
         navController = rememberNavController()
     )
 }
